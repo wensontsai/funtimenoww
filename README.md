@@ -1,3 +1,1 @@
-# stopwatchy
-# routerouteroute
 # funtimenoww
