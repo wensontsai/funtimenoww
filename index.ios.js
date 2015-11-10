@@ -25,6 +25,7 @@ var {
 
 var Launch = require('./src/components/Launch');
 var Stopwatch = require('./src/components/Stopwatch');
+var DeepThoughts = require('./src/components/DeepThoughts');
 var WeatherMap = require('./src/components/WeatherMap');
 var Register = require('./src/components/Register');
 var Login = require('./src/components/Login');
@@ -48,6 +49,7 @@ class Example extends React.Component {
                     <Route name="launch" component={Launch} initial={true} hideNavBar={true} title="Launch"/>
                     <Route name="register" component={Register} title="Register"/>
                     <Route name="stopwatch" component={Stopwatch} title="Stopwatch"/>
+                    <Route name="deepthoughts" component={DeepThoughts} title="DeepThoughts"/>
                     <Route name="weathermap" component={WeatherMap} title="WeatherMap"/>
                     <Route name="home" component={Home} title="Home" type="replace"/>
                     <Route name="login" component={Login} schema="modal"/>
