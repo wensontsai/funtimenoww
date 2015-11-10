@@ -24,6 +24,7 @@ var {
 } = require('./src/components/NavBar');
 
 var Launch = require('./src/components/Launch');
+var Stopwatch = require('./src/components/Stopwatch');
 var Register = require('./src/components/Register');
 var Login = require('./src/components/Login');
 var Error = require('./src/components/Error');
@@ -45,6 +46,7 @@ class Example extends React.Component {
 
                     <Route name="launch" component={Launch} initial={true} hideNavBar={true} title="Launch"/>
                     <Route name="register" component={Register} title="Register"/>
+                    <Route name="stopwatch" component={Stopwatch} title="Stopwatch"/>
                     <Route name="home" component={Home} title="Home" type="replace"/>
                     <Route name="login" component={Login} schema="modal"/>
                     <Route name="register2" component={Register} schema="withoutAnimation"/>
