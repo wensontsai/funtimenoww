@@ -11,8 +11,9 @@ class Launch extends React.Component {
             <View style={styles.container}>
                 <Text>Launch page</Text>
                 <Button onPress={()=>Actions.login({data:"Custom data", title:'Custom title' })}>Go to Login page</Button>
-                <Button onPress={Actions.register}>Go to Register page</Button>
                 <Button onPress={Actions.stopwatch}>Run tha StopWatch</Button>
+                <Button onPress={Actions.weathermap}>Check tha weatherrrr in ur town</Button>
+                <Button onPress={Actions.register}>Go to Register page</Button>
                 <Button onPress={Actions.register2}>Go to Register page without animation</Button>
                 <Button onPress={()=>Actions.error("Error message")}>Go to Error page</Button>
                 <Button onPress={Actions.tabbar}>Go to TabBar page</Button>
