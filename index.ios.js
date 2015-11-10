@@ -27,6 +27,7 @@ var Launch = require('./src/components/Launch');
 var Stopwatch = require('./src/components/Stopwatch');
 var DeepThoughts = require('./src/components/DeepThoughts');
 var WeatherMap = require('./src/components/WeatherMap');
+var PropertyFinder = require('./src/components/PropertyFinder/PropertyFinder');
 var Register = require('./src/components/Register');
 var Login = require('./src/components/Login');
 var Error = require('./src/components/Error');
@@ -51,6 +52,7 @@ class Example extends React.Component {
                     <Route name="stopwatch" component={Stopwatch} title="Stopwatch"/>
                     <Route name="deepthoughts" component={DeepThoughts} title="DeepThoughts"/>
                     <Route name="weathermap" component={WeatherMap} title="WeatherMap"/>
+                    <Route name="propertyfinder" component={PropertyFinder} title="PropertyFinder"/>
                     <Route name="home" component={Home} title="Home" type="replace"/>
                     <Route name="login" component={Login} schema="modal"/>
                     <Route name="register2" component={Register} schema="withoutAnimation"/>
