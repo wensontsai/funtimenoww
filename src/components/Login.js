@@ -19,7 +19,8 @@ var Login = React.createClass ({
     getInitialState: function(){
         return {
             username: '',
-            password: ''
+            password: '',
+            token: ''
         }
     },
     render: function(){
@@ -72,8 +73,8 @@ var Login = React.createClass ({
         return;
     },
     handleLogin: function(){
-        console.log(this.state.username);
-        console.log(this.state.password);
+        ActionsReflux.loginUser(this.state.username, this.state.password);
+        // console.log(this.token);
     }
 
 });

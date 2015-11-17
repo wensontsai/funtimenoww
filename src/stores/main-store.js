@@ -8,23 +8,29 @@ module.exports = Reflux.createStore({
 	listenables: [
 		ActionsReflux
 	],
-	loginUser: function(){
+	loginUser: function(username, password){
+		var loginObj = {
+			name: username,
+			password: password
+		};
 		// AJAX request thru Fetch
-		return Api.get('api/users')
-				.then(function(json){
-					this.topics = json.data;
-					this.triggerChange();
-				}.bind(this) );
+		return MainApi.loginUser(loginObj)
+				.then(function(data){
+					console.log("we got dis back on success");
+					console.log(data);
+					this.token = data.token;
+					this.triggerChange(this.token);
+				});
 	},
 	signupUser: function(){
-		return Api.post('api/authenticate')
+		return MainApi.post('api/authenticate')
 				.then(function(json){
 					this.topics = json.data;
 					this.triggerChange();
 				}.bind(this) );
 	},
 	getAllUsers: function(){
-		return Api.get('users')
+		return MainApi.get('users')
 				.then(function(json){
 					this.topics = json.data;
 					this.triggerChange();
@@ -32,6 +38,6 @@ module.exports = Reflux.createStore({
 	},
 	triggerChange: function(){
 		// Reflux emits 'change' : Reflux.trigger(event, emitObj)
-		this.trigger('change', this.topics);
+		this.trigger('change', item);
 	}
 });
