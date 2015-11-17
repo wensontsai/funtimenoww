@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-// var Reflux = require('reflux');
+var Reflux = require('reflux');
 var Actions = require('react-native-router-flux').Actions;
 
 var ActionsReflux = require('../actions/main-actions');
