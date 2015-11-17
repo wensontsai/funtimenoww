@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-var Api = require('../utils/api');
+var Api = require('../utils/weather-api');
 var Actions = require('react-native-router-flux').Actions;
 
 var {

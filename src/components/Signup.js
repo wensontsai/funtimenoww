@@ -1,21 +1,11 @@
 'use strict';
 
 var React = require('react-native');
-// var Reflux = require('reflux');
-var Actions = require('react-native-router-flux').Actions;
-
-var ActionsReflux = require('../actions/main-actions');
-var MainStore = require('../stores/main-store');
-
-
 var {View, Text, TextInput, TouchableHighlight, StyleSheet} = React;
 var Button = require('react-native-button');
+var Actions = require('react-native-router-flux').Actions;
 
-
-var Login = React.createClass ({
-    mixins: [
-
-    ],
+var Signup = React.createClass ({
     getInitialState: function(){
         return {
             username: '',
@@ -25,38 +15,9 @@ var Login = React.createClass ({
     render: function(){
         return (
             <View style={styles.container}>
-                <View>
-                <Text>Username</Text>
-                    <TextInput
-                        style={styles.loginInput}
-                        onChange = {this.onUsernameTextChanged.bind(this)} 
-                      />
-                </ View>
-                <View>
-                <Text>Password</Text>
-                    <TextInput
-                        style={styles.loginInput}
-                        onChange = {this.onPasswordTextChanged.bind(this)}  
-                      />
-                </ View>
-                <View>
-                    <TouchableHighlight 
-                        style={styles.buttonInput}
-                        underlayColor = '#99d9f4'
-                        onPress={this.handleLogin}
-                        >
-                        <Text>Login</Text>
-                    </TouchableHighlight>
-                </View>
-                <View>
-                    <TouchableHighlight 
-                        style={styles.buttonInput}
-                        underlayColor = '#99d9f4'
-                        onPress={Actions.signup}
-                        >
-                        <Text>Sign Up</Text>
-                    </TouchableHighlight>
-                </View>
+                <Text>
+                    ittsa sign up tyme, baby ?^
+                </Text>
             </View>
         );
     },
@@ -125,4 +86,4 @@ var styles = StyleSheet.create({
 
 
 
-module.exports = Login;
+module.exports = Signup;

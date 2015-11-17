@@ -30,6 +30,7 @@ var WeatherMap = require('./src/components/WeatherMap');
 var PropertyFinder = require('./src/components/PropertyFinder/PropertyFinder');
 var Register = require('./src/components/Register');
 var Login = require('./src/components/Login');
+var Signup = require('./src/components/Signup');
 var Error = require('./src/components/Error');
 var Home = require('./src/components/Home');
 var TabView = require('./src/components/TabView');
@@ -54,7 +55,8 @@ class Example extends React.Component {
                     <Route name="weathermap" component={WeatherMap} title="WeatherMap"/>
                     <Route name="propertyfinder" component={PropertyFinder} title="PropertyFinder"/>
                     <Route name="home" component={Home} title="Home" type="replace"/>
-                    <Route name="login" component={Login} schema="modal"/>
+                    <Route name="login" component={Login} title="Login"schema="modal"/>
+                    <Route name="signup" component={Signup} title="Signup"/>
                     <Route name="register2" component={Register} schema="withoutAnimation"/>
                     <Route name="error" component={Error} schema="popup"/>
                     <Route name="tabbar" hideNavBar={false} >
