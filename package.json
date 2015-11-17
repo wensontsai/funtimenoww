@@ -6,14 +6,15 @@
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
+    "lodash": "^3.10.1",
+    "minutes-seconds-milliseconds": "^1.0.3",
+    "react": "^0.12.2",
     "react-native": "^0.13.2",
-    "reflux": "^0.2.7",
-    "react" : "^0.12.2",
     "react-native-button": "^1.2.1",
+    "react-native-cookies": "0.0.3",
     "react-native-navbar": "^0.8.0",
     "react-native-router-flux": "^0.3.2",
     "react-native-tabs": "^0.0.5",
-    "minutes-seconds-milliseconds": "^1.0.3",
-    "lodash": "^3.10.1"
+    "reflux": "^0.2.7"
   }
 }

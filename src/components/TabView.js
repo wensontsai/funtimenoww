@@ -33,4 +33,3 @@ var styles = StyleSheet.create({
 });
 
 module.exports = TabView;
-module.exports = TabView;

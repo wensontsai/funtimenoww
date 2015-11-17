@@ -2,6 +2,8 @@
 
 var React = require('react-native');
 var Reflux = require('reflux');
+var CookieManager = require('react-native-cookies');
+
 var Actions = require('react-native-router-flux').Actions;
 
 var ActionsReflux = require('../actions/main-actions');
@@ -14,7 +16,7 @@ var Button = require('react-native-button');
 
 var Login = React.createClass ({
     mixins: [
-
+        Reflux.listenTo(MainStore, 'onChange')
     ],
     getInitialState: function(){
         return {
@@ -30,14 +32,14 @@ var Login = React.createClass ({
                 <Text>Username</Text>
                     <TextInput
                         style={styles.loginInput}
-                        onChange = {this.onUsernameTextChanged.bind(this)} 
+                        onChange = {this.onUsernameTextChanged} 
                       />
                 </ View>
                 <View>
                 <Text>Password</Text>
                     <TextInput
                         style={styles.loginInput}
-                        onChange = {this.onPasswordTextChanged.bind(this)}  
+                        onChange = {this.onPasswordTextChanged}  
                       />
                 </ View>
                 <View>
@@ -63,18 +65,25 @@ var Login = React.createClass ({
     },
     onUsernameTextChanged: function(event){
         this.setState({ username: event.nativeEvent.text });
-        console.log(this.state.username);
     },
     onPasswordTextChanged: function(event){
         this.setState({ password: event.nativeEvent.text });
-        console.log(this.state.password);
     },
     handleSignup: function(){
         return;
     },
     handleLogin: function(){
         ActionsReflux.loginUser(this.state.username, this.state.password);
-        // console.log(this.token);
+    },
+    onChange: function(event, token){
+        console.log(MainStore.token);
+
+        
+        this.setState({token: MainStore.token});
+
+        // set cookie on success //
+
+        // else send error //
     }
 
 });
