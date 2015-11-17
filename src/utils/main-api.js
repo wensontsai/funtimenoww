@@ -18,24 +18,11 @@
 
 // module.exports = MainApi;
 
-// var obj = {  
-//   method: 'POST',
-//   headers: {
-//     'Accept': 'application/json',
-//     'Content-Type': 'application/json',
-//     'Origin': '',
-//     'Host': 'api.producthunt.com'
-//   },
-//   body: JSON.stringify({
-//     'client_id': '(API KEY)',
-//     'client_secret': '(API SECRET)',
-//     'grant_type': 'client_credentials'
-//   })
 
 var rootUrl = 'http://localhost:8080/';
 
 module.exports = {
-	loginUser: function(paramsObj){
+	post: function(paramsObj){
 		var queryObject = {
 			method: 'POST',
 			headers: {
@@ -47,8 +34,7 @@ module.exports = {
 				password : paramsObj.password
 			})
 		}
-
-		return fetch(rootUrl + 'api/authenticate', queryObject)
+		return fetch(rootUrl + paramsObj.url, queryObject)
 		.then(function(response){
 			return response.json();
 		});
@@ -68,20 +54,5 @@ module.exports = {
 			return response.json();
 		});
 	},
-	post: function(url, paramsObj){
-
-		// *********************************
-		// parse paramsObj so that everything is concatenated
-		// '?username=asdfasdf&password=345345345'
-		// *********************************
-
-		return fetch(rootUrl + url, {
-			// headers: { 
-			// 	'Authorization': 'Client-ID ' + apiKey
-			// }
-		})
-		.then(function(response){
-			return response.json();
-		});
-	}
+	
 };

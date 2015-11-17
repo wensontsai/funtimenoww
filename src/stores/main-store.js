@@ -9,12 +9,13 @@ module.exports = Reflux.createStore({
 		ActionsReflux
 	],
 	loginUser: function(username, password){
-		var loginObj = {
+		var paramsObj = {
+			url: 'api/authenticate',
 			name: username,
 			password: password
 		};
 		// AJAX request thru Fetch
-		return MainApi.loginUser(loginObj)
+		return MainApi.post(paramsObj)
 				.then(function(data){
 					console.log("we got dis back on success");
 					console.log(data);
