@@ -1,6 +1,6 @@
 var Reflux = require('reflux');
 var ActionsReflux = require('../actions/main-actions');
-// var MainApi = require('../utils/MainApi');
+var MainApi = require('../utils/main-api');
 
 module.exports = Reflux.createStore({
 	// if any actions get called, and you have method of same name, invoke it
